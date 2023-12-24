@@ -251,7 +251,7 @@ const HomePage = () => {
                 className="mySwiper"
               >
                 {testimonial.map((item) => (
-                  <SwiperSlide key={item.id} className="shadow-sm">
+                  <SwiperSlide key={item.id} className="shadow-lg">
                     <p>{item.desc}</p>
                     <div className="people">
                       <img src={item.image} />

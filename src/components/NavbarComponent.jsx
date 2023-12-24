@@ -27,13 +27,8 @@ const NavbarComponent = () => {
     },
     {
       id: 2,
-      displayName: "Country",
-      path: "/country",
-    },
-    {
-      id: 3,
-      displayName: "Ingridient",
-      path: "/ingridient",
+      displayName: "Food",
+      path: "/food",
     },
   ];
 
