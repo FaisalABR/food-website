@@ -1,25 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchFood } from "../utils/reducer/foodSlice";
 
 const FoodPage = () => {
-  const [dataFood, setDataFood] = useState([]);
+  const dataFood = useSelector((state) => state.food.foods);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        let res = await axios.get(
-          "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
-        );
-        setDataFood(res.data.meals);
-      } catch (err) {
-        console.log(err);
-      }
-    };
+    dispatch(fetchFood());
+  }, [dispatch]);
 
-    fetchData();
-  }, []);
   return (
     <div className="country">
       <div className="w-100 min-vh-100">
